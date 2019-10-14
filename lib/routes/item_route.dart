@@ -28,7 +28,7 @@ class _ItemRouteState extends State<ItemRoute> {
   Future<String> _getItem(BuildContext context) async {
     http.Response response =
         await http.get(getItemURL + widget._itemNumber, headers: {
-      'Authorization': 'Bearer ' + Token.of(context).token,
+      'Authorization': 'Bearer ' + WebServices.of(context).token,
       'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US',
       'Content-Type': 'application/json',
     });

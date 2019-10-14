@@ -29,7 +29,7 @@ class _SearchRouteState extends State<SearchRoute> {
     // Get search results for keyword
     http.Response response = await http.post(findItemURL,
         headers: {
-          'X-EBAY-SOA-SECURITY-APPNAME': Token.of(context).appID,
+          'X-EBAY-SOA-SECURITY-APPNAME': WebServices.of(context).appID,
           'X-EBAY-SOA-OPERATION-NAME': 'findItemsByKeywords',
           'X-EBAY-SOA-REQUEST-DATA-FORMAT': 'JSON'
         },

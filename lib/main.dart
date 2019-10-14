@@ -54,7 +54,7 @@ class _EbaySearchAppState extends State<EbaySearchApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Token(
+    return WebServices(
       _token,
       _appID,
       _certID,
@@ -70,19 +70,19 @@ class _EbaySearchAppState extends State<EbaySearchApp> {
   }
 }
 
-class Token extends InheritedWidget {
+class WebServices extends InheritedWidget {
   final String token;
   final String appID;
   final String certID;
 
-  const Token(this.token, this.appID, this.certID, Widget child) : super(child: child);
+  const WebServices(this.token, this.appID, this.certID, Widget child) : super(child: child);
 
   @override
-  bool updateShouldNotify(Token oldWidget) {
+  bool updateShouldNotify(WebServices oldWidget) {
     return token != oldWidget.token;
   }
 
-  static Token of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(Token);
+  static WebServices of(BuildContext context) {
+    return context.inheritFromWidgetOfExactType(WebServices);
   }
 }
